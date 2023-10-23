@@ -1,0 +1,59 @@
+package testng2;
+
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+public class test6 {
+
+@Test
+public void testAddition() {
+    int result = add(2, 3);
+
+    // Assertion: Verify that the result of addition is as expected (5).
+    Assert.assertEquals(result, 5, "Addition is incorrect");
+}
+
+@Test
+public void testSubtraction() {
+    int result = subtract(7, 3);
+
+    // Assertion: Verify that the result of subtraction is as expected (4).
+    Assert.assertEquals(result, 4, "Subtraction is incorrect");
+}
+
+@Test
+public void testStringLength() {
+    String text = "TestNG";
+
+    // Assertion: Verify that the length of the string is as expected (6).
+    Assert.assertEquals(text.length(), 6, "String length is incorrect");
+}
+
+@Test
+public void testArrayContainment() {
+    String[] fruits = {"Apple", "Banana", "Orange"};
+
+    // Assertion: Verify that the array contains a specific element (e.g., "Banana").
+    Assert.assertTrue(arrayContains(fruits, "Banana"), "Array does not contain 'Banana'");
+}
+
+// Sample methods for testing
+private int add(int a, int b) {
+    return a + b;
+}
+
+private int subtract(int a, int b) {
+    return a - b;
+}
+
+private boolean arrayContains(String[] array, String element) {
+    for (String item : array) {
+        if (item.equals(element)) {
+            return true;
+        }
+    }
+    return false;
+}
+	
+
+}

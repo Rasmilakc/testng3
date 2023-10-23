@@ -1,0 +1,44 @@
+package testng2;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+public class test2 {
+	@Test
+	public void testcasethree() throws InterruptedException {
+		WebDriver driver;
+		String month="January";
+		String year="2024";
+		String date="1";
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\ASUS\\OneDrive\\Desktop\\chromedriver\\chromedriver.exe");
+		driver = new ChromeDriver();
+		driver.get("https://www.webdriveruniversity.com/Datepicker/index.html");
+		driver.findElement(By.id("datepicker")).click();
+		testdatepicker0.selectDate(driver,date,month,year);
+		boolean avail=driver.getCurrentUrl().contains("picker");
+		Assert.assertTrue(avail);
+		
+		}
+	@Test
+	public void testcasefour() throws InterruptedException {
+		WebDriver driver;
+		String month="January";
+		String year="2024";
+		String date="1";
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\ASUS\\OneDrive\\Desktop\\chromedriver\\chromedriver.exe");
+		driver = new ChromeDriver();
+		driver.get("https://www.webdriveruniversity.com/Datepicker/index.html");
+		driver.findElement(By.id("datepicker")).click();
+		testdatepicker0.selectDate(driver,date,month,year);
+		boolean avail=driver.findElement(By.tagName("h1")) .isDisplayed();
+		Assert.assertTrue(avail);
+		
+       
+	}
+        
+		
+	}
+
