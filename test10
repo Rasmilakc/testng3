@@ -1,0 +1,27 @@
+package testng2;
+
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+public class test10 {
+	   @Test
+	  public void testcaseone() {
+		   System.out.println("test case one pass");
+		   Assert.assertEquals(true, true);
+		
+	}
+		@Test(dependsOnMethods = "testcaseone")
+		public void testcasetwo() {
+			System.out.println("test case two pass");
+			Assert.assertEquals(true, false);
+			
+		}
+		@Test(dependsOnMethods  = "testcasetwo")
+		public void testcasethree() {
+			System.out.println("test case three pass");
+			Assert.assertEquals(true, true);
+
+
+}
+
+}

@@ -1,0 +1,22 @@
+package testng2;
+
+import org.testng.annotations.Test;
+
+public class test12 {
+	@Test(groups = "regression")
+	public void testcaseone() {
+		System.out.println("test case one pass");
+		
+	}
+	@Test(groups = "regression")
+		public void testcasetwo() {
+		System.out.println("test case two pass");
+			
+		}	
+	@Test(groups = "regression")
+	  public void testcasethree() {
+		System.out.println("test case three pass");
+				
+			}
+
+}
