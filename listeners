@@ -1,0 +1,31 @@
+package Common;
+
+import org.testng.ITestListener;
+import org.testng.ITestResult;
+
+
+public class Listeners extends Utility implements ITestListener {
+    
+    @Override
+    public void onTestStart(ITestResult result) {
+    	System.out.println("test on start...");
+        System.out.println("Test Started: " + result.getName());
+    }
+
+    @Override
+    public void onTestSuccess(ITestResult result) {
+    	System.out.println("test on success");
+        System.out.println("Test Passed: " + result.getName());
+    }
+
+    @Override
+    public void onTestFailure(ITestResult result) {
+    	System.out.println("test on failure");
+        System.out.println("Test Failed: " + result.getName());
+        if(result.getStatus()==ITestResult.FAILURE) {
+        captureScreenshot(result.getName());
+    }
+        
+    }
+
+}
